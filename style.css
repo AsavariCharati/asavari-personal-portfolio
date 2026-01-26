@@ -28,7 +28,7 @@ body {
   flex: 1.6;
   width:1000px;
   margin-left: -2rem;
-  margin-top: -4rem;
+  margin-top: -5rem;
   margin-right: 0;
 }
 
@@ -84,22 +84,23 @@ body {
 
 .eye {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgb(6, 5, 5);
+  width: 9px;
+  height: 9px;
+  background: black;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 10;
 }
 
 /* These positions are approximate – we’ll tweak them */
 .eye.left {
-  top: 27%;
-  left: 42%;
+  top: 26.95%;
+  left: 43%;
 }
 
 .eye.right {
-  top: 29.5%;
-  left: 52%;
+  top: 29.85%;
+  left: 52.25%;
 }
 .hero-image {
   position: relative;
