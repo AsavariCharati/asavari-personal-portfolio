@@ -84,8 +84,8 @@ body {
 
 .eye {
   position: absolute;
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   background: black;
   border-radius: 50%;
   pointer-events: none;
@@ -94,13 +94,16 @@ body {
 
 /* These positions are approximate – we’ll tweak them */
 .eye.left {
-  top: 26.95%;
-  left: 43%;
+  top: 27.15%;
+  left: 42.8%;
+  width: 11px;
+  height: 11px;
 }
 
 .eye.right {
-  top: 29.85%;
-  left: 52.25%;
+  top: 29.65%;
+  left: 52%;
+  height: 11px;
 }
 .hero-image {
   position: relative;
