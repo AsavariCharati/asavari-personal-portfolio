@@ -11,7 +11,7 @@ body {
 
 
 .hero {
-  min-height: 100vh;
+  min-height: 55vh;
   display: flex;
   align-items: center;
   padding: 6rem 4rem 6rem 2rem; /* tighter left */
@@ -27,8 +27,8 @@ body {
 .hero-text {
   flex: 1.6;
   width:1000px;
-  margin-left: -2rem;
-  margin-top: -5rem;
+  margin-left: -4rem;
+  margin-top: -9rem;
   margin-right: 0;
 }
 
@@ -37,7 +37,8 @@ body {
   height: 800px;
   display: block;
   margin-left: -5rem;
-  margin-top: -9rem;
+  margin-right: -3rem;
+  margin-top: -12rem;
 }
 
 
@@ -78,33 +79,138 @@ body {
 }
 
 .base {
-  width: 650px; /* keep whatever size you had */
+  width: 650px; 
   display: block;
 }
 
-.eye {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: black;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10;
-}
 
-/* These positions are approximate – we’ll tweak them */
-.eye.left {
-  top: 27.15%;
-  left: 42.8%;
-  width: 11px;
-  height: 11px;
-}
-
-.eye.right {
-  top: 29.65%;
-  left: 52%;
-  height: 11px;
-}
 .hero-image {
   position: relative;
+}
+.marquee{
+  width:100%;
+  overflow:hidden;
+  white-space:nowrap;
+  margin: 10px 0 10px 0;
+  margin-top:-220px;   /* pulls it upward */
+  margin-bottom:60px;
+}
+
+.marquee-track{
+  display:inline-block;
+  font-size:36px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:black;
+  opacity:0.9;
+  animation:scrollText 20s linear infinite;
+}
+
+@keyframes scrollText{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* SECTION */
+.bag-section{
+  min-height:130vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:visible;
+}
+
+/* WRAP */
+.bag-wrap{
+  position:relative;
+  width:700px;
+  height:700px;
+  overflow:visible;
+}
+
+/* BAG */
+.bag{
+  width:520px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:10;
+}
+
+/* ALL ITEMS start from bag center */
+.item{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0.2);
+  transition:all 0.9s cubic-bezier(.2,.8,.2,1);
+  opacity:0;
+  z-index:5;
+}
+
+/* BIGGER SIZES */
+.laptop{ width:520px; }
+.bottle{ width:320px; }
+.phone{ width:220px; }
+.headphones{ width:330px; }
+.perfume{ width:260px; }
+.lipgloss{ width:190px; }
+.coke{ width:160px; }
+
+/* ============================= */
+/* FINAL AROUND BAG POSITIONS */
+/* ============================= */
+/* ============================= */
+/* PERFECT AROUND-BAG POSITIONS  */
+/* based on your sketch exactly  */
+/* ============================= */
+
+/* LAPTOP — top left OUTSIDE bag */
+.bag-section.active .laptop{
+  transform:translate(-50%,-50%) translate(-320px,-260px) rotate(-18deg) scale(1);
+  opacity:1;
+  z-index:20;
+}
+
+/* BOTTLE — top center */
+.bag-section.active .bottle{
+  transform:translate(-50%,-50%) translate(80px,-340px) rotate(5deg) scale(1);
+  opacity:1;
+  z-index:20;
+}
+
+/* PERFUME — top right */
+.bag-section.active .perfume{
+  transform:translate(-50%,-50%) translate(240px,-240px) rotate(12deg) scale(1);
+  opacity:1;
+  z-index:20;
+}
+
+/* COKE — right side */
+.bag-section.active .coke{
+  transform:translate(-50%,-50%) translate(300px,-40px) rotate(6deg) scale(1);
+  opacity:1;
+  z-index:20;
+}
+
+/* HEADPHONES — right lower side (NOT below bag) */
+.bag-section.active .headphones{
+  transform:translate(-50%,-50%) translate(320px,160px) rotate(-12deg) scale(1);
+  opacity:1;
+  z-index:20;
+}
+
+/* PHONE — left lower side */
+.bag-section.active .phone{
+  transform:translate(-50%,-50%) translate(-320px,120px) rotate(-18deg) scale(1);
+  opacity:1;
+  z-index:20;
+}
+
+/* LIPGLOSS — left side small */
+.bag-section.active .lipgloss{
+  transform:translate(-50%,-50%) translate(-300px,-40px) rotate(14deg) scale(1);
+  opacity:1;
+  z-index:20;
 }
