@@ -2,12 +2,26 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif , -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f4efe9; 
-  color: #1a1a1a;
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#f6f1eb;
 }
+
+/* texture overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("paper.jpg") repeat;
+  background-size:500px;
+  opacity:0.60;
+  pointer-events:none;
+  z-index:-1;
+}
+
+
+
 
 
 .hero {
@@ -39,6 +53,8 @@ body {
   margin-left: -5rem;
   margin-right: -3rem;
   margin-top: -12rem;
+
+
 }
 
 
@@ -49,19 +65,26 @@ body {
   margin: 0 0 1rem 0;
   margin-right: -6rem;
   padding-right: 120px;
-  
+
 }
 
 .hero-text h1 span {
-  font-weight: 650;
+  font-weight: 900;
   color: #5a2a2a; 
-
+  font-family: 'Parisienne';
+  font-style:bold ;
+  font-size: 45px;
 }
+
+
+
 
 .hero-text p {
   font-size: 1.2rem;
   line-height: 1.9;
   margin: 0.6rem 0;
+  font-family:'Libre Baskerville', serif;
+
 
 }
 
@@ -103,7 +126,11 @@ body {
   letter-spacing:3px;
   color:black;
   opacity:0.9;
-  animation:scrollText 20s linear infinite;
+  animation:scrollText 15s linear infinite;
+  font-family: 'Playfair Display SC', serif;
+  color: #361a1a; 
+
+
 }
 
 @keyframes scrollText{
@@ -214,3 +241,45 @@ body {
   opacity:1;
   z-index:20;
 }
+/* ===== BOOK EXPLOSION SECTION ===== */
+.books-explosion{
+  height:520vh;
+  position:relative;
+  margin-top:-180px;
+
+
+}
+
+.books-stage{
+  position:sticky;
+  top:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.books-main-title{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-60%);
+  color:#222;
+  z-index:5;
+  text-align:center;
+  font-family: 'Playfair Display SC', serif;
+  font-style:bold ;
+  font-size: 45px;
+}
+
+
+.book-float{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:180px;
+  transform:translate(-50%,-50%) scale(0.2);
+  opacity:0;
+}
+
